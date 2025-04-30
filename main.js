@@ -9,45 +9,121 @@
 //     // set countEl's innerText to the count
 // }
 
-/*mal = My Anime List*/
-const malAPI='https://www.demonslayer-api.com/api/v1/characters?name=Muichiro';
-let kimetsuApiReturn=JSON;
-// const animePictureTest = document.getElementById('animePicture');
+// /*mal = My Anime List*/
+// const malAPI='https://www.demonslayer-api.com/api/v1/characters?name=Muichiro';
+// let kimetsuApiReturn=JSON;
+// // const animePictureTest = document.getElementById('animePicture');
 
-fetch(malAPI)
-    .then(response =>{
-        if(!response.ok){
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data=>{
-        kimetsuApiReturn = data;
-        console.log(data);
-        // animePictureTest.innerHTML+=src=""
-    })
-    .catch(error =>{
-        console.error('Error: ', error);
-    })
+// fetch(malAPI)
+//     .then(response =>{
+//         if(!response.ok){
+//             throw new Error('Network response was not ok');
+//         }
+//         return response.json();
+//     })
+//     .then(data=>{
+//         kimetsuApiReturn = data;
+//         console.log(data);
+//         // animePictureTest.innerHTML+=src=""
+//     })
+//     .catch(error =>{
+//         console.error('Error: ', error);
+//     })
     
 
 
 
 
 
-const countEl=-0;
+const countElLeftScore= document.getElementById("leftScore");
+const countElRightScore= document.getElementById("rightScore");
+const leftPlusOneBtn=document.getElementById("plus-one-btn-left");
+const rightPlusOneBtn=document.getElementById("plus-one-btn-right");
+const quarterTime=document.getElementById("qrTime");
+
+console.log(countElLeftScore.textContent);
 let count = 0;
-function increment(){
+let countPointsLeft=0;
+let countPointsRight=0;
 
+// leftPlusOneBtn.addEventListener("click",addOne(one));
+
+
+function addOneLeft(){
+    countPointsLeft+=1
+    countElLeftScore.textContent=countPointsLeft;
+}
+
+function addOneRight(){
+    countPointsRight+=1
+    countElRightScore.textContent=countPointsRight;
+}
+
+
+function addTwoLeft(){
+    countPointsLeft+=2
+    countElLeftScore.textContent=countPointsLeft;
+}
+
+function addTwoRight(){
+    countPointsRight+=2
+    countElRightScore.textContent=countPointsRight;
+}
+
+
+function addThreeLeft(){
+    countPointsLeft+=3
+    countElLeftScore.textContent=countPointsLeft;
+}
+
+function addThreeRight(){
+    countPointsRight+=3
+    countElRightScore.textContent=countPointsRight;
 }
 
 
 
 
-function save(){
-  
+
+
+
+function formatTime(timeInfloat){
+    const minutes=Math.floor(timeInfloat);
+    
+    const seconds=Math.floor((((timeInfloat-minutes)*60)*10));
+    console.log(timeInfloat);
+    console.log(minutes);
+    console.log(seconds);
+    if(seconds<10){
+        return(`${minutes}:${seconds*10}`);
+    }
+    else {
+        return(`${minutes}:${seconds}`);
+    }
+
+    
+}
+
+quarterTime.textContent=formatTime(quarterTime.textContent);
+
+// if(quarterTime.textContent=formatTime(quarterTime.textContent)){
+    
+//     console.log(formatTime(quarterTime.textContent));
+// }
+
+let quarterCountDown = setInterval(formatTime((quarterTime.textContent)-.001),1000)
+
+do{
+    quarterTime.textContent-=1;
+    formatTime(quarterTime.textContent)
+}
+
+while (quarterTime.textContent>=0){
+    // quarterTime.textContent-=1;
+    // formatTime(quarterTime.textContent)
 
 }
+
 
 
 

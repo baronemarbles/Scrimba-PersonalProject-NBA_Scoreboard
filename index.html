@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="index.css">
@@ -13,15 +14,15 @@
                     <img class="teamsLogo" id="lakersIcon" src="./imgs/Los_Angeles_Lakers_logo.svg.png" alt="Los Angeles Lakers Logo">
                     <h1 class="teamsName">LAL</h1>
                     <div class="buttons-container">
-                        <button id="plus-one-btn" onclick="addTOne()">+1</button>
-                        <button id="plus-two-btn" onclick="addTwo()">+2</button>
-                        <button id="plus-three-btn" onclick="addThree()">+3</button>
+                        <button id="plus-one-btn-left" class="pointsAdditionBtn" onclick="addOneLeft()">+1</button>
+                        <button id="plus-two-btn-left" class="pointsAdditionBtn"  onclick="addTwoLeft()">+2</button>
+                        <button id="plus-three-btn-left" class="pointsAdditionBtn" onclick="addThreeLeft()">+3</button>
                     </div>
                 </div>
 
                 <div class="scoreboard-container">
-                    <h1 class="TeamsScore" id="lakersScore">0</h1>
-                    <h1 class="TeamsScore" id="wolvesScore">0</h1>
+                    <h1 class="TeamsScore" id="leftScore">0</h1>
+                    <h1 class="TeamsScore" id="rightScore">0</h1>
                 </div>
 
                 <div class="wolvesTeam-container">
@@ -29,9 +30,9 @@
                         <img class="teamsLogo" id="wolvesIcon"  src="./imgs/minnesota-timberwolves-logo-transparent.png" alt="Minnesota-timberwolves-logo">
                         <h1 class="teamsName">MIN</h1>
                         <div class="buttons-container">
-                            <button id="plus-one-btn" onclick="addTOne()">+1</button>
-                            <button id="plus-two-btn" onclick="addTwo()">+2</button>
-                            <button id="plus-three-btn" onclick="addThree()">+3</button>
+                            <button id="plus-one-btn-right" onclick="addOneRight()">+1</button>
+                            <button id="plus-two-btn-right" onclick="addTwoRight()">+2</button>
+                            <button id="plus-three-btn-right" onclick="addThreeRight()">+3</button>
                         </div>
                     </div>
                 </div>
@@ -43,10 +44,10 @@
                         <h3>1st</h3>
                     </div>
                     <div class="quarterTimeLeft" id="qTimeLeft">
-                        <h3 id="count-el">12 : 00</h3>
+                        <h3 id="qrTime">12.025</h3>
                     </div>
                     <div class="shotClock-container" id="shotClock">
-                        <h3>24</h3>
+                        <h3 id="shotClock">24</h3>
                     </div>
                 </div>
             </div>
@@ -57,6 +58,12 @@
                 <button id="plus-three-btn" onclick="addThree()">+3</button>
             </div> -->
             <img id="animePicture" >
+        </div>
+
+        <div class="startMatch-wrapper">
+            <div class="startMatchButton-container">
+                <button class="startMatchBtn" id="startMatch">Start</button>
+            </div>
         </div>
 
 
