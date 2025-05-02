@@ -50,40 +50,57 @@ let countPointsRight=0;
 
 
 function addOneLeft(){
-    countPointsLeft+=1
+    countPointsLeft+=1;
     countElLeftScore.textContent=countPointsLeft;
 }
 
 function addOneRight(){
-    countPointsRight+=1
+    countPointsRight+=1;
     countElRightScore.textContent=countPointsRight;
 }
 
 
 function addTwoLeft(){
-    countPointsLeft+=2
+    countPointsLeft+=2;
     countElLeftScore.textContent=countPointsLeft;
 }
 
 function addTwoRight(){
-    countPointsRight+=2
+    countPointsRight+=2;
     countElRightScore.textContent=countPointsRight;
 }
 
 
 function addThreeLeft(){
-    countPointsLeft+=3
+    countPointsLeft+=3;
     countElLeftScore.textContent=countPointsLeft;
 }
 
 function addThreeRight(){
-    countPointsRight+=3
+    countPointsRight+=3;
     countElRightScore.textContent=countPointsRight;
 }
 
 
 
 
+
+function timeTicking(quartertime,minutes,seconds){
+    quartertime-=0.1;
+    console.log(quarterTime.textContent);
+    console.log(seconds);
+    if(seconds<10){
+        quarterTime.textContent=`${minutes}:${seconds/60}`
+    } else{
+
+        quarterTime.textContent=`${minutes}:${seconds/60}`
+    }
+    if(minutes>0){
+
+        formatTime(quartertime);
+    }
+    // quartertime.textContent=formatTime(quartertime.textContent);
+}
 
 
 
@@ -93,16 +110,26 @@ function formatTime(timeInfloat){
     const seconds=Math.floor((((timeInfloat-minutes)*60)*10));
     console.log(timeInfloat);
     console.log(minutes);
-    console.log(seconds);
+    console.log(seconds/60);
     if(seconds<10){
-        return(`${minutes}:${seconds*10}`);
+        seconds*10;
     }
-    else {
-        return(`${minutes}:${seconds}`);
+    while(quarterTime.textContent!='0'){
+        timeTicking(timeInfloat,minutes,seconds);
     }
+
+
+    // if(seconds<10){
+    //     return(`${minutes}:${seconds*10}`);
+    // }
+    // else {
+    //     return(`${minutes}:${seconds}`);
+    // }
 
     
 }
+
+
 
 quarterTime.textContent=formatTime(quarterTime.textContent);
 
@@ -111,18 +138,23 @@ quarterTime.textContent=formatTime(quarterTime.textContent);
 //     console.log(formatTime(quarterTime.textContent));
 // }
 
-let quarterCountDown = setInterval(formatTime((quarterTime.textContent)-.001),1000)
+// console.log(typeof(quarterTime.textContent)+' '+quarterTime.textContent)
+// quarterTime.textContent=parseFloat(quarterTime.textContent);
+// console.log(typeof(quarterTime.textContent)+' '+quarterTime.textContent)
 
-do{
-    quarterTime.textContent-=1;
-    formatTime(quarterTime.textContent)
-}
+// let quarterCountDown = setInterval(timeTicking(quarterTime),1000)
 
-while (quarterTime.textContent>=0){
-    // quarterTime.textContent-=1;
-    // formatTime(quarterTime.textContent)
+// do{
+//     quarterTime.textContent-=1;
+//     formatTime(quarterTime.textContent)
+// }
 
-}
+// while (quarterTime.textContent>=0)
+// //     {
+// //     // quarterTime.textContent-=1;
+// //     // formatTime(quarterTime.textContent)
+
+// // }
 
 
 
