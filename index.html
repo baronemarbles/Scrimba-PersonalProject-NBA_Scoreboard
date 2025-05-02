@@ -57,15 +57,59 @@
                 <button id="plus-two-btn" onclick="addTwo()">+2</button>
                 <button id="plus-three-btn" onclick="addThree()">+3</button>
             </div> -->
-            <img id="animePicture" >
         </div>
 
         <div class="startMatch-wrapper">
             <div class="startMatchButton-container">
-                <button class="startMatchBtn" id="startMatch">Start</button>
+                <button class="startMatchBtn" id="startMatch" onclick="execStartTimer()">Start</button>
             </div>
         </div>
 
+        <div id="gameAndGameControl-container">
+            <div class="gameplayer">
+                <video src="https://cdn.nba.com/videos/teams/wsc-feed/media/team/timberwolves/2025/05/01/no-game/25D7F1C49180FD1AC33C11EB184CA799ECFB1DC6_1280x720.mp4" controls loop >
+    
+                </video>
+            </div>
+            
+
+            <div class="controlesPontos-wrapper">
+                <div class="controlesPontos-container">
+    
+                    <div id="controlePontoEsq" class="controlePontos">
+                        <div id="buttons-container-controle" class="buttons-container">
+                            <span class="scoringOptions">
+                                <button id="plus-one-btn-left" class="pointsAdditionBtn" onclick="addOneLeft()">+1</button><label for="plus-one-btn-left">1 PONTO</label>
+                            </span>
+                            
+                            <span class="scoringOptions">
+                                <button id="plus-two-btn-left" class="pointsAdditionBtn"  onclick="addTwoLeft()">+2</button><label for="plus-two-btn-left">2 PONTOS</label>
+                            </span>
+    
+                            <span class="scoringOptions">
+                                <button id="plus-three-btn-left" class="pointsAdditionBtn" onclick="addThreeLeft()">+3</button><label for="plus-three-btn-left">3 PONTOS</label>
+                            </span>
+                        </div>
+                    </div>
+    
+                    <div id="ControlePontoDir" class="controlePontos">
+                        <div id="buttons-container-controle" class="buttons-container">
+                            <span class="scoringOptions">
+                                <button id="plus-one-btn-right" class="pointsAdditionBtn" onclick="addOneRight()">+1</button><label for="plus-one-btn-right">1 PONTO</label>
+                            </span>
+                            
+                            <span class="scoringOptions">
+                                <button id="plus-two-btn-right" class="pointsAdditionBtn"  onclick="addTwoRight()">+2</button><label for="plus-two-btn-right">2 PONTOS</label>
+                            </span>
+    
+                            <span class="scoringOptions">
+                                <button id="plus-three-btn-right" class="pointsAdditionBtn" onclick="addThreeRight()">+3</button><label for="plus-three-btn-right">3 PONTOS</label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <script src="./main.js"></script>
     </body>

@@ -130,8 +130,19 @@ function formatTime(timeInfloat){
 }
 
 
+//Instancia da função para o contador  //
+function execStartTimer(){
+    let conteudoInterativoJogo = document.getElementById("gameAndGameControl-container");
+    conteudoInterativoJogo.style.display="grid"
+    conteudoInterativoJogo.style.gridTemplateColumns="3fr 1fr"
+    conteudoInterativoJogo.style.marginInline="1rem";
+   
+    
+    // quarterTime.textContent=formatTime(quarterTime.textContent);
+}
 
-quarterTime.textContent=formatTime(quarterTime.textContent);
+
+// quarterTime.textContent=formatTime(quarterTime.textContent);//
 
 // if(quarterTime.textContent=formatTime(quarterTime.textContent)){
     

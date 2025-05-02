@@ -4,8 +4,15 @@
     box-sizing: border-box;
 }
 
+/*TIMBERWOLVES GAME VID
+    https://cdn.nba.com/videos/teams/wsc-feed/media/team/timberwolves/2025/05/01/no-game/25D7F1C49180FD1AC33C11EB184CA799ECFB1DC6_1280x720.mp4
+
+TIMBERWOLVES WPP
+    https://cdn.nba.com/teams/uploads/sites/1610612750/2023/10/City_1920X1080.jpg
+*/
+
 body {
-    background-image: url("station.jpg");
+    background-image: linear-gradient(90deg, rgb(255, 241, 179), #c0d9ff);
     background-size: cover;
     font-family: Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bold;
@@ -84,11 +91,15 @@ body {
 
 #shotClock{
     background-color: red;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 h1 {
     margin-top: 0.625rem;
     margin-bottom: 0.625rem;
+    color: whitesmoke;
+    text-transform: uppercase;
 }
 
 h2 {
@@ -113,7 +124,7 @@ button {
     font-weight: bold;
     height: 2.2rem;
     width: fit-content;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
     border-radius: 5px;
     cursor: pointer;
 }
@@ -125,18 +136,60 @@ button:hover{
     box-shadow: 0 0 1.5rem rgb(0, 216, 0);
 }
 
-/* button:focus{
-    scale: 1.1;
-} */
-
-
-/* #increment-btn {
-    background: darkred;
+/* .pointsAdditionBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 10px 20px;
+    color: #141414;
+    font-size: 1.8rem;
+    font-weight: bold;
+    height: 2.2rem;
+    width: fit-content;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-#save-btn {
-    background: darkgreen;
+.pointsAdditionBtn:hover{
+    background-color: rgb(0, 216, 0);
+    scale: 0.95;
+    color: white;
+    transition: scale .3s ease;
+    box-shadow: 0 0 1.5rem rgb(0, 216, 0);
+}
+
+#plus-one-btn-left{
+    background-image: linear-gradient(45deg,#ffb20d,#FDB927,#8523e0, #552583);
+}
+
+#plus-one-btn-left:hover{
+    background-color: rgb(85, 37, 130);
+    background-image: none;
+    scale: 0.95;
+    color: white;
+    transition: scale .3s ease;
+    box-shadow: 0 0 1.5rem rgb(117, 38, 190);
 } */
+
+#gameAndGameControl-container{
+    display: none;
+}
+
+.gameplayer{
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-self: center;
+    justify-content: center;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+}
+
 
 .buttons-container{
     display: grid;
@@ -148,14 +201,65 @@ button:hover{
     
 }
 
+/* .controlesPontos-wrapper{
+    margin-inline: .5rem;
+} */
+
+.controlesPontos-container{
+    display: flex;
+    justify-content: space-between;
+    /* margin-inline: 1rem; */
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.5rem;
+}
+
+#buttons-container-controle{
+display: flex;
+flex-direction: column;
+row-gap: 1rem;
+background-color: rgba(0, 0, 0, 0.5);
+border-radius: 5px;
+padding: 1rem;
+}
+
+div#controlePontoEsq {
+    border-top: 10px solid #fdb927;
+}
+
+div#ControlePontoDir {
+    border-top: 10px solid #083881;
+}
+
+
+.controlePontos{
+    max-height: fit-content;
+    width:fit-content;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 2rem 2rem 3.5rem 2rem;
+    border-top: 10px solid  #8523e0;
+    /* border-image: linear-gradient(90deg,#ffb20d,#FDB927,#8523e0, #552583);
+    border-image-slice:1; */
+    border-radius: 5px ;
+    box-shadow: 0 0 20px rgba(10, 10, 10, 0.1);
+}
+
+.scoringOptions {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+
+label{
+    font-size: 1.4rem;
+    color: white;
+}
 .startMatch-wrapper{
     display: flex;
     justify-content: center;
+    margin: 2rem 0;
 }
 
-.startMatchButton-container{
-    margin-top: 2rem;
-}
 
 #startMatch{
     padding: 1.5rem;
